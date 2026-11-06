@@ -11,27 +11,6 @@
   "share_to_feed": true,
   "tiktok_redirect_uri": "https://frizy229.github.io/autopostreels/",
   "tiktok_client_key": "sbawcfw5v6nqpfbf6w",
-  "accounts": [
-    {
-      "name": "dayzerorules",
-      "token_env": "IG_TOKEN",
-      "user_id_env": "IG_USER_ID"
-    },
-    {
-      "name": "rulezerosurvivel",
-      "token_env": "IG_TOKEN_RULEZEROSURVIVEL",
-      "user_id": "17841467205646764"
-    },
-    {
-      "name": "survivelzerorule",
-      "token_env": "IG_TOKEN_SURVIVELZERORULE",
-      "user_id": "17841458959352503"
-    },
-    {
-      "name": "evelon185",
-      "platform": "tiktok",
-      "mode": "inbox"
-    }
-  ],
+  "accounts": [],
   "paused": []
 }
