@@ -11,6 +11,15 @@
   "share_to_feed": true,
   "tiktok_redirect_uri": "https://frizy229.github.io/autopostreels/",
   "tiktok_client_key": "sbawcfw5v6nqpfbf6w",
-  "accounts": [],
+  "accounts": [
+    {
+      "name": "ex1ky118",
+      "platform": "tiktok",
+      "mode": "inbox",
+      "token_env": "TT_TOKEN_EX1KY118",
+      "open_id": "-000nitBHlIrzLarFFPatEPPbJuBaBdcyJM-",
+      "connected": "2026-11-06T08:54Z"
+    }
+  ],
   "paused": []
 }
