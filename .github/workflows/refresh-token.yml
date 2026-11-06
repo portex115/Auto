@@ -1,0 +1,21 @@
+name: Продление токена
+
+on:
+  schedule:
+    # раз в неделю, в понедельник 06:00 UTC. Токены Instagram Login живут 60 дней, продлеваются все аккаунты из config.json.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Продлить токены
+        env:
+          ALL_SECRETS: ${{ toJSON(secrets) }}
+        run: python autoposter.py refresh-token

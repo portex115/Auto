@@ -1,0 +1,48 @@
+{
+  "name": "reels-widget",
+  "productName": "Reels Widget",
+  "version": "4.1.1",
+  "description": "Виджет автозалива: разделы Instagram и TikTok, очереди, план дня, тексты и результаты",
+  "main": "main.js",
+  "author": "Alex",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "test": "node test/core.test.js && node test/github.test.js && node test/tiktok.test.js && node test/lanes.test.js && node test/ui.test.js && node test/health.test.js && node test/accounts.test.js",
+    "dist": "electron-builder --win nsis --publish never"
+  },
+  "devDependencies": {
+    "electron": "33.4.11",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.dayzerorules.reelswidget",
+    "productName": "Reels Widget",
+    "files": [
+      "main.js",
+      "preload.js",
+      "lib/**",
+      "renderer/**",
+      "assets/**",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "runAfterFinish": true,
+      "artifactName": "ReelsWidget-Setup.exe",
+      "shortcutName": "Reels Widget"
+    }
+  },
+  "dependencies": {
+    "blakejs": "1.2.1",
+    "tweetnacl": "1.0.3"
+  }
+}

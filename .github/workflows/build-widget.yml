@@ -1,0 +1,38 @@
+name: Сборка виджета для Windows
+
+on:
+  push:
+    paths: ["widget-app/**", ".github/workflows/build-widget.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: widget-app
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+      - run: npm install
+      - run: npm test
+      - name: Сборка установщика
+        run: npx electron-builder --win nsis --publish never
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+      - name: Опубликовать в Releases
+        # релиз только из main: сборка из ветки PR проверяет, что всё собирается, но не подменяет рабочий виджет
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        working-directory: .
+        run: |
+          gh release delete widget -y --cleanup-tag || true
+          gh release create widget widget-app/dist/ReelsWidget-Setup.exe --title "Виджет для Windows" \
+            --notes "Скачай ReelsWidget-Setup.exe и запусти. Инструкция: README.md, раздел «Виджет для Windows»."
