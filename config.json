@@ -27,6 +27,14 @@
       "token_env": "TT_TOKEN_EVELON203",
       "open_id": "-000-ivuq7V8vMaLvq5Vz8ZeiraGSvsQxmbx",
       "connected": "2026-11-07T15:18Z"
+    },
+    {
+      "name": "evel_reels192",
+      "platform": "tiktok",
+      "mode": "inbox",
+      "token_env": "TT_TOKEN_EVEL_REELS192",
+      "open_id": "-000IbG0R6OqqfQS_SUvlbaTxwG-YevBi9oB",
+      "connected": "2026-11-07T15:30Z"
     }
   ],
   "paused": []
