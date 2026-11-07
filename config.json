@@ -19,6 +19,14 @@
       "token_env": "TT_TOKEN_EX1KY118",
       "open_id": "-000nitBHlIrzLarFFPatEPPbJuBaBdcyJM-",
       "connected": "2026-11-06T08:54Z"
+    },
+    {
+      "name": "evelon203",
+      "platform": "tiktok",
+      "mode": "inbox",
+      "token_env": "TT_TOKEN_EVELON203",
+      "open_id": "-000-ivuq7V8vMaLvq5Vz8ZeiraGSvsQxmbx",
+      "connected": "2026-11-07T15:18Z"
     }
   ],
   "paused": []
